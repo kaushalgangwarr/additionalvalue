@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+bool isPrime(int n)
+{
+    if (n <= 1)
+        return false;
+
+    for (int i = 2; i <= sqrt(n); i++)
+        if (n % i == 0)
+            return false;
+ 
+    return true;
+}
+
+int main() {
+    int N,T;
+    cin>>N;
+    while(N--)
+    {
+        int P=0;
+        cin>>T;
+        for(int i=2;i<=T;i++)
+        {
+            if(isPrime(i)==true&&isPrime(2*i+1)==true)
+                P=P+i;
+        }
+        cout<<P<<endl;
+    }
+    return 0;
+}
