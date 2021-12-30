@@ -1,0 +1,38 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int r,n,A[1000];
+        cin>>r;
+        cin>>n;
+        for(int i=0;i<n;i++)
+        {
+            cin>>A[i];
+        }
+        while(r--)
+        {
+            int j,f;
+            f=A[0];
+            for(j=0;j<n-1;j++)
+            {
+                A[j]=A[j+1];
+            }
+            A[j]=f;
+        }
+        for(int i=0;i<n;i++)
+        {
+            cout<<A[i]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
