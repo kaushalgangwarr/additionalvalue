@@ -1,0 +1,43 @@
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+using namespace std;
+int main() {
+    int n,j,sum=0,D=INT_MIN;
+    cin>>n;
+    vector<int>arr;
+    for(int i=0;i<n;i++)
+    {
+        cin>>j;
+        arr.push_back(j);
+    }
+    for(int i=0;i<n;i++)
+    {
+        sum=sum+arr[i];
+        D=max(sum,D);
+        if(sum<0)
+            sum=0;
+    }
+    cout<<D<<"\n";
+    return 0;
+}
